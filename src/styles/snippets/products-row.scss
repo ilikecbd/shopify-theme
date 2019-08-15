@@ -1,0 +1,13 @@
+.products-row {
+
+  &__header {
+    padding-bottom: 25px;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
+
+}

@@ -1,0 +1,28 @@
+<div class="products-row">
+  <div class="products-row__header">
+    <div class="products-row__details">
+      {% if products_title %}
+        <h5 class="is-size-5 has-text-weight-bold">{{ products_title }}</h5>
+      {% endif %}
+      {% if products_description %}
+        <p class="is-size-6">{{ products_description }}</p>
+      {% endif %}
+    </div>
+    {% if products_link %}
+      <a class="products-row__link" href="{{ products_link }}">
+        {% if products_link_text %}
+          {{ products_link_text }}
+        {% else %}
+          Show more
+        {% endif %}
+      </a>
+    {% endif %}
+  </div>
+  <div class="products-row__products columns is-mobile is-multiline-mobile">
+    {% for product in products %}
+      <div class="column is-half-mobile is-one-quarter-tablet is-one-fifth-desktop">
+        {% include 'product-preview' %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

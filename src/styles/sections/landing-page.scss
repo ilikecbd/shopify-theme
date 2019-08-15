@@ -1,0 +1,27 @@
+.landing-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c7e4ce;
+  color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__content {
+    padding: 60px 30px;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  &__headline {
+    font-weight: 900;
+    font-size: 3em;
+    line-height: 1;
+    padding-bottom: 10px;
+  }
+}

@@ -1,0 +1,42 @@
+.jdgm-prev-badge {
+  display: inline-flex !important;
+  align-items: center;
+
+  &::after {
+    padding-left: 3px;
+    content: "("attr(data-number-of-reviews)")";
+  }
+
+  &__stars {
+    display: inline-flex;
+  }
+
+  .jdgm-star {
+    margin-right: -1px;
+    font-size: 0.9rem;
+    
+    &::before {
+      font-family: 'icomoon' !important;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      color: #ccc;
+      
+
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e91a";
+    }
+
+    &.jdgm--on::before {
+      // color: yellow;
+    }
+  }
+
+  &__text {
+    display: none;
+  }
+}

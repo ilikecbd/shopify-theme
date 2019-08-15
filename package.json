@@ -1,0 +1,41 @@
+{
+  "name": "ilikecbd-theme",
+  "version": "1.0.0-alpha.1",
+  "private": true,
+  "author": "Shopify Inc.",
+  "description": "A barebones, Slate compatible, starting point for developing Shopify themes.",
+  "keywords": [
+    "shopify",
+    "theme"
+  ],
+  "bugs": "https://github.com/Shopify/skeleton-theme/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shopify/skeleton-theme.git"
+  },
+  "devDependencies": {
+    "@shopify/slate-tools": "1.0.0-beta.18",
+    "@types/shopify-buy": "^1.4.3",
+    "css-loader": "^3.2.0",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "vue-loader": "^15.7.1",
+    "vue-property-decorator": "^8.2.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "scripts": {
+    "start": "slate-tools start",
+    "watch": "slate-tools start --skipFirstDeploy",
+    "build": "slate-tools build",
+    "deploy": "slate-tools build && slate-tools deploy",
+    "zip": "slate-tools build && slate-tools zip"
+  },
+  "dependencies": {
+    "bulma": "^0.7.5",
+    "feather-icons": "^4.24.0",
+    "vanilla-lazyload": "^12.0.0",
+    "vue": "^2.6.10"
+  }
+}

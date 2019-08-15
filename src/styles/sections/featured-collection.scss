@@ -1,0 +1,9 @@
+@import "~bulma/sass/utilities/mixins.sass";
+
+.featured-collection {
+  min-height: 65vh;
+  padding: 50px 0 40px;
+  background: #c7e4ce;
+  display: flex;
+  align-items: center;
+}

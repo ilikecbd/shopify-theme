@@ -1,0 +1,39 @@
+.site-header-user {
+  position: relative;
+
+  &__menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    // width: 50px;
+    // height: 60px;
+    // border-radius: 4px;
+    // overflow: hidden;
+
+    &::after {
+      bottom: 100%;
+      right: 16px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-bottom-color: #fff;
+      border-width: 4px;
+    }
+  }
+
+  &__link {
+    display: block;
+    min-width: 100px;
+    padding: 5px 12px;
+    border-top: 1px solid #fafafa;
+
+    &:first-child {
+      border-top: 0;
+      border-radius: 4px 4px 0 0;
+    }
+  }
+}

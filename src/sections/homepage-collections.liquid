@@ -1,0 +1,13 @@
+{%- assign homepage_collections = collections -%}
+
+<div class="homepage-collections section">
+  <div class="container">
+    <div class="columns is-multiline is-gapless">
+      {% for collection in homepage_collections %}
+        <div class="column is-half-tablet is-one-quarter-desktop">
+          {% include "collection-square" %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

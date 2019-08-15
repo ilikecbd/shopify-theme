@@ -1,0 +1,15 @@
+<div class="product-preview">
+  <a href="{{ product.url }}">
+    <figure class="product-preview__thumbnail-container image is-5by4" style="background-image: url({{ product.image | img_url: '400x400' }});">
+      
+    </figure>
+  </a>
+  <div class="product-preview__text is-size-7">
+    <h6>{% for tag in product.tags %}
+  {{ tag }}
+{% endfor %}</h6>
+    <div>{{ product.title }}</div>
+    <div class="has-text-weight-bold">{{ product.price | money }}</div>
+    {{ product.metafields.judgeme.badge }}
+  </div>
+</div>

@@ -1,0 +1,34 @@
+@import "./variables";
+@import "./animations";
+@import "./fonts";
+
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/grid/_all.sass";
+@import "~bulma/sass/form/_all.sass";
+@import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/layout/section.sass";
+@import "~bulma/sass/elements/icon.sass";
+@import "~bulma/sass/elements/button.sass";
+@import "~bulma/sass/elements/image.sass";
+@import "~bulma/sass/elements/icon.sass";
+
+@import "./components/index";
+@import "./sections/index";
+@import "./snippets/index";
+@import "./templates/index";
+
+figure.image {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.feather {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}

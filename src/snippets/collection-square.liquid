@@ -1,0 +1,11 @@
+<div class="collection-square">
+  <figure class="image is-square lazy" data-bg="url({{ collection.image | img_url: '500x500' }})">
+    <div class="collection-square__content has-ratio">
+      <div>
+        <h5>{{ collection.title }}</h5>
+        <p>{{ collection.description }}</p>
+        <a href="{{ collection.url }}">Explore more</a>
+      </div>
+    </div>
+  </figure>
+</div>
