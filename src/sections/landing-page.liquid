@@ -1,23 +1,23 @@
 <div class="landing-page">
-  
+  <div class="landing-page__background" style="background-image: url({{ 'tile.png' | asset_url }})"></div>
   <div class="landing-page__content">
-    <div>
-        <h1 class="landing-page__headline">Some big text here.</h1>
-        <p class="landing-page__text">Some description text here.</p>
+    {% comment %} <img class="landing-page__logo" src="{{ 'logo.png' | asset_url }}" width="70"/> {% endcomment %}
+    <div class="landing-page__text">
+    <img class="landing-page__logo" src="{{ 'logo.png' | asset_url }}" width="150"/>
+        {% comment %} <h1 class="landing-page__headline">CBD, simplified.</h1> {% endcomment %}
+        <p class="landing-page__description">We are hard at work curating the highest quality CBD products for you. Enter your email below to receive updates.</p>
         {% form 'customer' %}
           {% if form.posted_successfully? %}
-            <p>Thank you for your interest. We will keep you updated!</p>
+            <p><i class="icon-check"></i> We will keep you updated!</p>
           {% else %}
             <input type="hidden" name="contact[tags]" value="newsletter">
-            <div class="field">
-              <p class="control">
+            <div class="field has-addons">
+              <p class="control is-expanded">
                 <input type="email" placeholder="Email address" name="contact[email]" id="NewsletterEmail" class="input" autocorrect="off" autocapitalize="off" required>            
               </p>
-            </div>
-            <div class="field">
               <p class="control">
-                <button type="submit" class="button is-fullwidth" name="commit">
-                  Keep me updated
+                <button type="submit" class="button is-primary is-fullwidth" name="commit">
+                  <i class="icon-chevron-right1"></i>
                 </button>
               </p>
             </div>
@@ -26,7 +26,6 @@
     </div>
   </div>
   <div class="landing-page__image is-hidden-mobile">
-
-
+    
   </div>
 </div>
