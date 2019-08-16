@@ -1,46 +1,32 @@
-<div class="landing-page" style="background-image: url({{ 'bg.jpg' | asset_url }})">
+<div class="landing-page">
   
   <div class="landing-page__content">
-    <h1 class="landing-page__headline">Some big text here.</h1>
-    <p>Some description text here.</p>
-    <div class="field is-grouped">
-
-    {% form 'customer' %}
-  {{ form.errors | default_errors }}
-  {% if form.posted_successfully? %}
-    <p class="form--success">yesss</p>
-  {% else %}
-    <input type="hidden" name="contact[tags]" value="newsletter">
-    <label for="NewsletterEmail" class="newsletter-label">
-      {% if label %}
-        <div class="rte">{{ label }}</div>
-      {% else %}
-        labellll
-      {% endif %}
-    </label>
-    <div class="input-group">
-      <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_placeholder' | t }}" name="contact[email]" id="NewsletterEmail" class="input-group__field site-footer__newsletter-input" autocorrect="off" autocapitalize="off">
-      <div class="input-group__btn">
-        <button type="submit" class="btn" name="commit" id="Subscribe">
-          <span {% if has_page_content %}class="medium-up--hide"{% endif %}>submit</span>
-          {% if has_page_content %}
-            <span class="small--hide">{% include 'icon-arrow-right' %}</span>
+    <div>
+        <h1 class="landing-page__headline">Some big text here.</h1>
+        <p class="landing-page__text">Some description text here.</p>
+        {% form 'customer' %}
+          {% if form.posted_successfully? %}
+            <p>Thank you for your interest. We will keep you updated!</p>
+          {% else %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="field">
+              <p class="control">
+                <input type="email" placeholder="Email address" name="contact[email]" id="NewsletterEmail" class="input" autocorrect="off" autocapitalize="off" required>            
+              </p>
+            </div>
+            <div class="field">
+              <p class="control">
+                <button type="submit" class="button is-fullwidth" name="commit">
+                  Keep me updated
+                </button>
+              </p>
+            </div>
           {% endif %}
-        </button>
-      </div>
+        {% endform %}
     </div>
-  {% endif %}
-{% endform %}
+  </div>
+  <div class="landing-page__image is-hidden-mobile">
 
 
-  <p class="control is-expanded">
-    <input class="input" type="text" placeholder="Email address">
-  </p>
-  <p class="control">
-    <a class="button is-info">
-      Search
-    </a>
-  </p>
-</div>
   </div>
 </div>
