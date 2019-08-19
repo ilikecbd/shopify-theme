@@ -1,1 +1,8 @@
 @import "./login";
+@import "./collection";
+
+.template {
+  &.with-header {
+    padding-top: 60px;
+  }
+}

@@ -1,6 +1,50 @@
 {
-  "current": "Default",
-  "presets": {
-    "Default": {}
-  }
+  "current": {
+    "sections": {
+      "featured-collection": {
+        "type": "featured-collection",
+        "settings": {
+          "collection": "new"
+        }
+      },
+      "homepage-collections": {
+        "type": "homepage-collections",
+        "blocks": {
+          "1566075203545": {
+            "type": "block",
+            "settings": {
+              "collection": "edibles"
+            }
+          },
+          "1566075213039": {
+            "type": "block",
+            "settings": {
+              "collection": "pets"
+            }
+          },
+          "1566075219561": {
+            "type": "block",
+            "settings": {
+              "collection": "tinctures"
+            }
+          },
+          "1566075229359": {
+            "type": "block",
+            "settings": {
+              "collection": "topicals"
+            }
+          }
+        },
+        "block_order": [
+          "1566075203545",
+          "1566075213039",
+          "1566075219561",
+          "1566075229359"
+        ]
+      }
+    }
+  },
+  "content_for_index": [
+    "featured-collection"
+  ]
 }

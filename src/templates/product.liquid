@@ -1,2 +1,19 @@
+<div class="product-template template with-header">
+  {% section "product-detail" %}
+  
 
-<product-controls :product="{{ product | json | escape }}"></product-controls>
+  <div v-product-recommendations></div>
+
+  <div class="section">
+    <div class="container">
+      <recently-viewed-products />
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+

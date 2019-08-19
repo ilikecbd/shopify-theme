@@ -3,10 +3,13 @@
     <div class="site-header-user__icon">
       <slot></slot>
     </div>
-    <div class="site-header-user__menu">
+    <!-- <div class="site-header-user__icon">
+      
+    </div> -->
+    <!-- <div class="site-header-user__menu">
       <a class="site-header-user__link">Sign up</a>
       <a class="site-header-user__link">Login</a>
-    </div>
+    </div> -->
   </div>
 </template>
 

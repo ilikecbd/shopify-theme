@@ -3,7 +3,8 @@
 <div class="homepage-collections section">
   <div class="container">
     <div class="columns is-multiline is-gapless">
-      {% for collection in homepage_collections %}
+      {% for block in section.blocks %}
+        {%- assign collection = collections[block.settings.collection] -%}
         <div class="column is-half-tablet is-one-quarter-desktop">
           {% include "collection-square" %}
         </div>
@@ -11,3 +12,22 @@
     </div>
   </div>
 </div>
+
+{% schema %}
+{
+  "name": "Homepage Collections",
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Collection",
+      "settings": [
+        {
+          "id": "collection",
+          "type": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

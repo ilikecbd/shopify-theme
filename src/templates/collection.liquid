@@ -1,0 +1,38 @@
+<div class="collection-template">
+  <div class="collection-template__masthead">
+
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="columns is-7 is-variable">
+        <div class="column is-one-fifth">
+          <tag-controls
+            :current-tags="{{ current_tags | json | escape }}"
+            :tags="{{ collections['all'].all_tags | json | escape }}"
+            :current-path="'{{ collection.url }}'"
+          ></tag-controls>
+          {% include "tag-list" %}
+        </div>
+        <div class="column">
+        <sort-options initial-value="{{ collection.sort_by | default: collection.default_sort_by | escape }}"></sort-options>
+          {% include "products-grid" %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <recently-viewed-products />
+    </div>
+  </div>
+
+  {% comment %} {% include "tag-list" %}
+  <sort-options initial-value="{{ collection.sort_by | default: collection.default_sort_by | escape }}"></sort-options>
+  <div class="section">
+    <div class="container">
+    {% include "products-grid" %}
+  
+    </div>
+  </div> {% endcomment %}
+</div>

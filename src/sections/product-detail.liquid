@@ -1,0 +1,14 @@
+<div class="product-detail section">
+  <div class="container">
+    <div class="columns is-variable is-6">
+      <div class="column is-three-fifths">
+        <product-images />
+      </div>
+      <div class="column">
+        <h2 class="is-size-4 has-text-weight-bold has-text-info">{{ product.title }}</h2>
+        <div class="is-size-6">{{ product.description }}<div>
+        <product-controls :product="{{ product | json | escape }}"></product-controls>
+      </div>
+    </div>
+  </div>
+</div>

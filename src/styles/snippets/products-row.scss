@@ -2,8 +2,22 @@
 
   &__header {
     padding-bottom: 25px;
+  }
 
-    @include tablet {
+  @include touch {
+    &__products > div:nth-child(n+5) {
+      display: none;
+    }
+  }
+
+  @include desktop {
+    &__products > div:nth-child(n+6) {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    &__header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;

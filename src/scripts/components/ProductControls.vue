@@ -7,6 +7,7 @@
         </option>
       </select>
     </div>
+    <button class="button">Add to cart</button>
   </div>
 </template>
 
@@ -34,9 +35,3 @@ export default class ProductControls extends Vue {
 
 }
 </script>
-
-<style>
-.product-controls {
-  padding-top: 80px;
-}
-</style>

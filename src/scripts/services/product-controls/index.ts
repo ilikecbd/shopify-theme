@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import { Product } from '../shopify/types'
+import recent from '../recently-viewed'
+import shopify from '../shopify'
 
 export interface State {
   product: Product | null
@@ -18,6 +20,9 @@ export class ProductControlsService {
     this.state.product = product
     this.state.options = product.variants[0].options.slice()
     this.state.quantity = 1
+
+    recent.add(product)
+    // shopify.recommendations.fetch(product.id)
   }
 
   get product () {

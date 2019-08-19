@@ -1,9 +1,14 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import { CartResource } from './resources/CartResource'
+import { SearchResource } from './resources/SearchResource'
+import { RecommendationsResource } from './resources/RecommendationsResource'
 
 export class ShopifyService {
   private client: AxiosInstance
+
   public cart = new CartResource(this)
+  public search = new SearchResource(this)
+  public recommendations = new RecommendationsResource(this)
 
   constructor () {
     this.client = axios.create({
@@ -20,6 +25,8 @@ export class ShopifyService {
   }
 
 }
+
+export default new ShopifyService()
 
 // import axios, { AxiosRequestConfig } from 'axios'
 

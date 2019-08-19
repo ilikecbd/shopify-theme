@@ -1,7 +1,22 @@
-<section class="featured-collection">
+{%- assign collection = collections[section.settings.collection] -%}
+
+<section class="featured-collection" v-transparent-nav-area>
   <div class="container has-text-white">
     <h1 class="is-size-1 has-text-weight-bold">Cool. Calm. Collected.</h1>
     <p>Some text goes here. Isn't that super interesting? I think so too.</p>
-    <button class="button">Expore the collection</button>
+    <a class="button" href="{{ collection.url }}">Expore the collection</a>
   </div>
 </section>
+
+{% schema %}
+  {
+    "name": "Featured Collection",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      }
+    ]
+  }
+{% endschema %}

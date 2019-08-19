@@ -1,0 +1,11 @@
+{%- assign collection = collections["new"] -%}
+{%- assign products_title = collection.title -%}
+{%- assign products_description = collection.description -%}
+{%- assign products = collection.products -%}
+{%- assign products_link = collection.url -%}
+
+<section class="section">
+  <div class="container">
+    {% include 'products-row' %}
+  </div>
+</section>

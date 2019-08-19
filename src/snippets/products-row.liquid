@@ -2,7 +2,7 @@
   <div class="products-row__header">
     <div class="products-row__details">
       {% if products_title %}
-        <h5 class="is-size-5 has-text-weight-bold">{{ products_title }}</h5>
+        <h5 class="is-size-5 has-text-weight-bold has-text-info">{{ products_title }}</h5>
       {% endif %}
       {% if products_description %}
         <p class="is-size-6">{{ products_description }}</p>
@@ -18,7 +18,7 @@
       </a>
     {% endif %}
   </div>
-  <div class="products-row__products columns is-mobile is-multiline-mobile">
+  <div class="products-row__products columns is-mobile is-multiline">
     {% for product in products %}
       <div class="column is-half-mobile is-one-quarter-tablet is-one-fifth-desktop">
         {% include 'product-preview' %}

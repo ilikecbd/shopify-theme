@@ -7,5 +7,11 @@
   &__text {
     padding-top: 10px;
   }
+
+  &__text-item {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   
 }

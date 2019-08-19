@@ -1,0 +1,15 @@
+{% paginate collection.products by 20 %}
+
+<div class="products-grid">
+  <div class="products-grid columns is-3 is-variable is-mobile is-multiline">
+    {% for product in collection.products %}
+      <div class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop">
+        {% include 'product-preview' %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
+
+{% endpaginate %}

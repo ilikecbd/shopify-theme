@@ -6,6 +6,7 @@ import {
 
 export interface Product extends ShopifyProduct {
   variants: ProductVariant[]
+  url: string
 }
 
 export interface ProductVariant extends ShopifyProductVariant {
@@ -14,4 +15,12 @@ export interface ProductVariant extends ShopifyProductVariant {
 
 export interface Cart extends ShopifyCart {
   
+}
+
+export interface SearchResults {
+  resources: {
+    results: {
+      products: Product[]
+    }
+  }
 }
