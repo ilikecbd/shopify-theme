@@ -1,22 +1,16 @@
 <template>
   <div class="tag-controls">
-    <div v-for="(category, $categoryIndex) in categories" :key="$categoryIndex">
+    <div v-for="(tags, category) in allTagsByCategory" :key="category">
+      <h5>{{ category }}s</h5>
+      <a class="tag-controls__button" :class="generateTagClass(category, null)" :href="generateTagHref(category, null)">All</a>
+      <a class="tag-controls__button" :class="generateTagClass(category, tag.tag)" :href="generateTagHref(category, tag.tag)" v-for="tag in tags" :key="tag.tag">{{ tag.text }}</a>
+    </div>
+
+    <!-- <div v-for="(category, $categoryIndex) in categories" :key="$categoryIndex">
       <h5>{{ category }}s</h5>
       <a :href="generateTagHref(category, null)">All</a>
       <a :href="generateTagHref(category, option.tag)" v-for="option in categoryOptions[$categoryIndex]" :key="option.tag">{{ option.text }}</a>
-    </div>
-    <h5>Tags</h5>
-    
-    <!-- <a :href="generateTagLink(tag)" :class="generateTagClass(tag)" v-for="tag in brands" :key="tag">
-      {{ generateTagText(tag) }}
-    </a>
-    <h3>Tags</h3>
-    <a :href="generateTagLink(tag)" :class="generateTagClass(tag)" v-for="tag in brands" :key="tag">
-      {{ generateTagText(tag) }}
-    </a> -->
-    <!-- <a :href="generateTagLink(tag)" :class="generateTagClass(tag)" v-for="tag in tags" :key="tag">
-      {{ tag }}
-    </a> -->
+    </div> -->
   </div>
 </template>
 
@@ -25,18 +19,10 @@ import Vue from 'vue'
 import { Component, Prop } from 'vue-property-decorator'
 import { handleize } from '../utils'
 
-// export interface TagGroups {
-//   [key: string]: string
-// }
-
-// export interface huh extends TagGroups {
-//   tags: string[]
-// }
-
 export interface TagConfig {
   tag: string
   active: boolean
-  category?: string
+  category: string
   text: string
 }
 
@@ -51,10 +37,7 @@ export interface TagOptions {
 @Component
 export default class TagControls extends Vue {
   
-  @Prop({
-    type: Array,
-    default: [],
-  })
+  @Prop(Array)
   readonly currentTags!: string[]
 
   @Prop(Array)
@@ -69,31 +52,137 @@ export default class TagControls extends Vue {
     return {
       tag,
       active: this.existingTags.indexOf(tag) > -1,
-      category: arr[arr.length - 2],
+      category: arr[arr.length - 2] || 'tag',
       text: arr[arr.length - 1],
     }
   }
 
-  public generateTagHref (category: string, tag?: string) {
-    const modifiedCurrentTags = this.currentTagsConfig.map((config) => {
-      return config.category === category ? tag : config.tag
-    })
+  public generateTagClass (category: string, tag?: string) {
+    const existingTagConfig = this.currentTagsByCategory[category]
 
-    const newCurrentTags = modifiedCurrentTags.filter((tag) => !!tag) as string[]
-
-    return this.currentPath + '/' + newCurrentTags.map(handleize).join('+') + window.location.search
+    return {
+      'is-active': !!existingTagConfig ? existingTagConfig.tag === tag : !tag
+    }
   }
 
-  get currentTagsConfig () {
-    return this.currentTags.map((tag) => this.generateTagConfig(tag))
+  public generateTagHref (category: string, tag?: string) {
+    const tags = this.categories.reduce((tags, cat) => {
+      const existingTagConfig = this.currentTagsByCategory[cat]
+
+      return [
+        ...tags,
+        cat === category ? tag : existingTagConfig ? existingTagConfig.tag : undefined
+      ]
+      // return [
+      //   ...tags,
+      //   cat === category ? tag : !!this.currentTagsByCategory[cat] ? this.currentTagsByCategory[cat].tag : undefined
+      // ]
+    }, [] as (string | undefined)[])
+
+    const tagsFiltered = tags.filter((tag) => !!tag) as string[]
+    // const modified = {
+    //   ...this.currentTagsByCategory,
+    //   [category]: tag,
+    // }
+
+    // const modifiedCurrentTags = Object.keys(modified).map((category) => c)
+    // const initialTags: string[] = []
+
+    // const tags = Object.keys(this.currentTagsByCategory).reduce((tags, key) => {
+    //   if (key === category) {
+    //     return !!tag ? tags.concat([tag]) : tags
+    //   }
+
+    //   const existingTag = this.currentTagsByCategory[key]
+
+    //   if (!!existingTag) {
+    //     return tags.concat([existingTag.tag])
+    //   }
+
+    //   return tags
+    // }, initialTags)
+    // const tags = Object.keys(this.currentGroupedTags).map((groupCategory) => {
+    //   if (groupCategory === category) {
+    //     return tag
+    //   }
+
+    //   const existingTag = this.currentGroupedTags[groupCategory]
+
+    //   if (!!existingTag) {
+    //     return existingTag.tag
+    //   }
+
+    //   return undefined
+    //   // return groupCategory === category ? tag : this.currentGroupedTags[]
+    // })
+    // const modified = {
+    //   ...this.currentGroupedTags,
+    //   [category]: tag,
+    // }
+
+    // const tags: string = []
+    // const all = 
+    // const t: string[] = []
+
+    // const c = this.categories.reduce((a, b) => {
+    //   if (b === category) {
+
+    //   }
+
+    //   const cur = this.currentGroups[b]
+
+    //   if (!!cur) {
+    //     return cur.tag
+    //   }
+
+    //   // if (!!this.currentGroups[b]) {
+    //   //   return this.currentGroups[b].tag
+    //   // }
+
+    //   return a
+    // }, t)
+    // const modifiedCurrentTags = {
+    //   ...this.currentTagsConfig,
+    //   category: tag,
+    // }
+
+    // const currentTags = this.categories.map((cat) => {
+    //   return cat === category ? tag : (!!this.currentGroups[cat] ? this.currentGroups[cat].tag : undefined)
+    // })
+
+    // const newCurrentTags = modifiedCurrentTags.filter((tag) => !!tag) as string[]
+
+    // console.log('generating', category, tag, currentTagsConfig)
+    return this.currentPath + '/' + tagsFiltered.map(handleize).join('+') + window.location.search
+
   }
 
   get allTagsConfig (): TagConfig[] {
     return this.allTags.map((tag) => this.generateTagConfig(tag))
   }
 
+  get allTagsByCategory () {
+    const groups: Record<string, TagConfig[]> = {}
+
+    return this.categories.reduce((groups, category) => Object.assign(groups, {
+      [category]: this.allTagsConfig.filter((config) => config.category === category)
+    }), groups)
+  }
+
+  get currentTagsConfig () {
+    return this.existingTags.map((tag) => this.generateTagConfig(tag))
+  }
+
+  get currentTagsByCategory () {
+    const groups: Record<string, TagConfig | undefined> = {}
+
+    return this.categories.reduce((groups, category) => Object.assign(groups, {
+      [category]: this.currentTagsConfig.find((config) => config.category === category)
+    }), groups)
+  }
+
   get categories () {
-    const categories: string[] = []
+    const categories: string[] = ['brand', 'flavor']
 
     return this.allTagsConfig.reduce((a, b) => {
       if (!b.category || a.indexOf(b.category) !== -1) {
@@ -104,10 +193,13 @@ export default class TagControls extends Vue {
     }, categories)
   }
 
-  get categoryOptions () {
-    return this.categories.map((category) => this.allTagsConfig.filter((config) => config.category === category))
-  }
+  // get categoryOptions () {
+  //   return this.categories.map((category) => this.allTagsConfig.filter((config) => config.category === category))
+  // }
 
+  mounted () {
+    console.log(this.currentTagsConfig)
+  }
   // get remainingOptions () {
   //   return 
   // }

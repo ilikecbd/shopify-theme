@@ -1,0 +1,9 @@
+.tag-controls {
+  &__button {
+    display: block;
+
+    &.is-active {
+      background: #eee;
+    }
+  }
+}

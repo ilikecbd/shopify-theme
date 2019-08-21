@@ -8,10 +8,9 @@
         <div class="column is-one-fifth">
           <tag-controls
             :current-tags="{{ current_tags | json | escape }}"
-            :tags="{{ collections['all'].all_tags | json | escape }}"
+            :all-tags="{{ collections['all'].all_tags | json | escape }}"
             :current-path="'{{ collection.url }}'"
           ></tag-controls>
-          {% include "tag-list" %}
         </div>
         <div class="column">
         <sort-options initial-value="{{ collection.sort_by | default: collection.default_sort_by | escape }}"></sort-options>
