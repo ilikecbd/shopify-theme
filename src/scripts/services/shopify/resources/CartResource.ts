@@ -12,10 +12,11 @@ export class CartResource {
     })
   }
 
-  public add = () => {
+  public add = (id: string, quantity: number) => {
     return this.shopify.request<Cart>({
       method: 'POST',
       url: '/cart/add.js',
+      data: { id, quantity }
     })
   }
 
@@ -26,10 +27,11 @@ export class CartResource {
     })
   }
 
-  public change = () => {
+  public change = (id: string, quantity: number) => {
     return this.shopify.request<Cart>({
       method: 'POST',
       url: '/cart/change.js',
+      data: { id, quantity }
     })
   }
 

@@ -1,25 +1,30 @@
 import Vue from 'vue'
 
 export interface UIServiceState {
-  header: {
-    transparent: boolean
-  }
+  isSearchBarFocused: boolean
+  isHeaderTransparent: boolean
 }
 
 export class UIService {
   private readonly state = Vue.observable<UIServiceState>({
-    header: {
-      transparent: false
-    }
+    isHeaderTransparent: false,
+    isSearchBarFocused: false,
   })
 
-  public updateHeaderTransparency = (value: boolean = false) => {
-    console.log(value)
-    this.state.header.transparent = value
+  get isSearchBarFocused () {
+    return this.state.isSearchBarFocused
   }
 
   get isHeaderTransparent () {
-    return this.state.header.transparent
+    return this.state.isHeaderTransparent
+  }
+
+  public toggleHeaderTransparent = (value: boolean) => {
+    this.state.isHeaderTransparent = value
+  }
+
+  public toggleSearchBarFocused = (value: boolean) => {
+    this.state.isSearchBarFocused = value
   }
   
 }
