@@ -1,5 +1,8 @@
 <template>
-  <div class="search-bar" >
+  <div class="search-bar" :class="classes">
+     <i @click="focus" class="icon-search"></i>
+     <input ref="input" class="search-bar__input" v-model="term" @focus="onInputFocus" @blur="onInputBlur"/>
+
     <!-- <div class="field">
   <p class="control has-icons-left">
     <input class="input is-small" type="text" placeholder="I'm looking for...">
@@ -8,13 +11,13 @@
     </span>
   </p>
 </div> -->
-
+<!-- 
     <div class="g-field">
       <div class="search-bar__icon">
         <i class="icon-search"></i>
       </div>
       <input class="search-bar__input g-input" placeholder="Search..." v-model="term" :class="classes" @focus="onInputFocus" @blur="onInputBlur"/>
-    </div>
+    </div> -->
 
     <!-- <div class="search-bar__input-container">
     
@@ -22,8 +25,10 @@
       
     </div> -->
 
-    <div class="search-bar__results">
-      <search-results />
+    <div class="search-bar__results" v-if="focused && results">
+      <a :href="result.url" class="search-bar__result" v-for="result in results" :key="result.id">
+        {{ result.title }}
+      </a>
     </div>
   </div>
 </template>
@@ -43,6 +48,9 @@ import ui from '../services/ui';
 export default class SiteHeaderUser extends Vue {
   public term: string = ''
   public focused: boolean = false
+  public $refs!: {
+    input: HTMLInputElement
+  }
 
   @Watch('term')
   onTermChanged(term: string) {
@@ -54,8 +62,15 @@ export default class SiteHeaderUser extends Vue {
   }
 
   public onInputBlur () {
-    this.focused = false
-    search.query('')
+   setTimeout(() => this.focused = false, 100)
+  }
+
+  public focus () {
+    this.$refs.input.focus()
+  }
+
+  get results () {
+    return search.results
   }
 
   get classes () {

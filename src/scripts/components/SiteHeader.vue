@@ -6,21 +6,21 @@
           <div class="site-header__navigation-item site-header__navigation-item--logo">
             [logo]
           </div>
-          <div class="site-header__navigation-item" @mouseenter="isHoverVisible = true" @mouseleave="isHoverVisible = false">
+          <a class="site-header__navigation-item site-header__navigation-item--link" @mouseenter="isHoverVisible = true" @mouseleave="isHoverVisible = false">
             Our Products
-          </div>
-          <div class="site-header__navigation-item">
+          </a>
+          <a class="site-header__navigation-item site-header__navigation-item--link">
             About CBD
-          </div>
+          </a>
           <div class="site-header__navigation-item site-header__navigation-item--filler">
             <search-bar/>
           </div>
-          <div class="site-header__navigation-item">
+          <a href="/login" class="site-header__navigation-item site-header__navigation-item--link">
             Login
-          </div>
-           <div class="site-header__navigation-item">
+          </a>
+          <a href="/signup" class="site-header__navigation-item site-header__navigation-item--link">
             Sign up
-          </div>
+          </a>
           <div class="site-header__navigation-item site-header__navigation-item--icon" @click="openCart">
             <i class="icon-shopping-cart"></i>
             <div class="site-header__cart-count">{{ cartCount }}</div>

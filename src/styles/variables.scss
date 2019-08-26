@@ -1,13 +1,15 @@
 $family-sans-serif: 'Roboto';
 $info: #5763c4;
 $primary: #ef8263;
+
 // $input-background-color: #eee;
 $input-border-color: #eee;
 $input-hover-border-color: #eee;
 $input-radius: 3px;
 $input-shadow: none;
 $size-7: 0.8em;
-$link: #ef845f;
+// $link: #ef845f;
+$link: hsl(0, 0%, 29%);
 $section-padding: 2rem 1.5rem;
 
 $ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);

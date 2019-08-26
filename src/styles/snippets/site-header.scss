@@ -34,12 +34,16 @@ $site-header-transition-easing: $ease-in-out-quint;
     //   content: "";
     // }
 
-    &:hover {
-      background: #fafafa;
-    }
+    
 
     &--filler {
       flex: 1;
+    }
+
+    &--link {
+      &:hover {
+        background: #fafafa;
+      }
     }
 
     &--icon {
