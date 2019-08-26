@@ -1,0 +1,32 @@
+.breadcrumbs {
+  display: flex;
+  font-size: 0.9em;
+
+  &__item:not(:last-child) {
+    padding-right: 5px;
+    color: $grey-light;
+
+    &::after {
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      font-size: 1em;
+      display: inline-block;
+      margin: -1px 0 0 5px;
+      color: $grey-lighter;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      vertical-align: middle;
+      font-family: 'icomoon';
+      content: "\e917";
+    }
+  }
+
+  &__item.is-active {
+    color: $info;
+    font-weight: 600;
+    pointer-events: none;
+  }
+}

@@ -21,6 +21,28 @@
     flex-direction: column;
   }
 
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+
+  &__header {
+    padding: 20px;
+  }
+
+  &__items-container {
+    width: 100%;
+    // max-width: 300px;
+    padding: 0 20px;
+  }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+  }
+
   /* animations */
 
   .fade-enter-active {

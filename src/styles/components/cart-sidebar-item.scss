@@ -1,0 +1,19 @@
+.cart-sidebar-item {
+  display: flex;
+  padding: 0 0 10px 0;
+
+  &__image {
+    background: #ccc;
+    width: 75px;
+    height: 75px;
+    flex: 0 0 75px;
+  }
+
+  &__description {
+    padding-left: 15px;
+  }
+
+  &__controls {
+
+  }
+}

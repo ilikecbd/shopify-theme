@@ -1,18 +1,14 @@
-{% if collection.handle == "all" %}
-  {% section "all-products" %}
-{% else %}
-  {% section "collection" %}
-{% endif %}
+<div class="collection-template">
+  <div class="hero">
 
 
-{% comment %} <div class="collection-template">
-  <div class="collection-template__masthead">
+      </div>
 
-  </div>
+
   <div class="section">
     <div class="container">
       <div class="columns is-7 is-variable">
-        <div class="column is-one-fifth">
+        <div class="column is-one-third-tablet is-one-quarter-desktop">
           <tag-controls
             :current-tags="{{ current_tags | json | escape }}"
             :all-tags="{{ collections['all'].all_tags | json | escape }}"
@@ -20,7 +16,7 @@
           ></tag-controls>
         </div>
         <div class="column">
-        <sort-options initial-value="{{ collection.sort_by | default: collection.default_sort_by | escape }}"></sort-options>
+        {% comment %} <sort-options initial-value="{{ collection.sort_by | default: collection.default_sort_by | escape }}"></sort-options> {% endcomment %}
           {% include "products-grid" %}
         </div>
       </div>
@@ -33,4 +29,4 @@
     </div>
   </div>
 
-</div> {% endcomment %}
+</div>

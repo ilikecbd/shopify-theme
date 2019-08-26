@@ -1,0 +1,13 @@
+{% paginate collections by 20 %}
+
+<div class="columns is-multiline is-gapless">
+    {% for collection in collections %}
+    <div class="column is-half-tablet is-one-quarter-desktop">
+      {% include "collection-square" %}
+    </div>
+  {% endfor %}
+</div>
+
+{{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
+
+{% endpaginate %}

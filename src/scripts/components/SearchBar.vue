@@ -60,8 +60,7 @@ export default class SiteHeaderUser extends Vue {
 
   get classes () {
     return {
-      'is-focused': this.focused,
-      'is-transparent': ui.isHeaderTransparent,
+      'is-focused': this.focused
     }
   }
 

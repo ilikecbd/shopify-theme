@@ -1,6 +1,23 @@
 .tag-controls {
+
+  &__category-title {
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+    margin: 15px 0 7px;
+
+  }
+
   &__button {
     display: block;
+    padding: 2px 0;
+    font-size: 0.9em;
+    color: $grey-light;
 
     &.is-active {
       background: #eee;

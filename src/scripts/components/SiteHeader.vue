@@ -1,48 +1,59 @@
 <template>
-  <div class="site-header" :class="classes">
-    <div class="site-header__logo">
-      
-    </div>
-    <div class="site-header__controls">
-      <search-bar />
-      <site-header-user>
-        <div class="site-header__control">
-          <i class="site-header__icon icon-user"></i>
-        </div>
-      </site-header-user>
-      <site-header-cart>
-        <div class="site-header__control">
-          <i class="site-header__icon icon-shopping-cart"></i>
-        </div>
-      </site-header-cart>
-      <!-- <div class="site-header__control">
-        
-      </div>
-      <div class="site-header__control">
-        <site-header-user />
-      </div>
-      <div class="site-header__control">
-        <site-header-cart />
-      </div> -->
-      <!-- <search-bar />
-
-      <div class="site-header__icon">
-        <span class="icon">
-          <i class="icon-search"></i>
-        </span>
-      </div>
-      <site-header-user>
-        <div class="site-header__icon">
-          <span class="icon">
+  <div class="site-header">
+    <div class="site-header__content">
+      <div class="container">
+        <div class="site-header__navigation">
+          <div class="site-header__navigation-item site-header__navigation-item--logo">
+            [logo]
+          </div>
+          <div class="site-header__navigation-item" @mouseenter="isHoverVisible = true" @mouseleave="isHoverVisible = false">
+            Our Products
+          </div>
+          <div class="site-header__navigation-item">
+            About CBD
+          </div>
+          <div class="site-header__navigation-item site-header__navigation-item--filler">
+            <search-bar/>
+          </div>
+          <div class="site-header__navigation-item">
+            Login
+          </div>
+           <div class="site-header__navigation-item">
+            Sign up
+          </div>
+          <div class="site-header__navigation-item site-header__navigation-item--icon" @click="openCart">
+            <i class="icon-shopping-cart"></i>
+            <div class="site-header__cart-count">{{ cartCount }}</div>
+          </div> 
+          <!-- <div class="site-header__navigation-item site-header__navigation-item--search">
+            <search-bar/>
+          </div>
+          <div class="site-header__navigation-item site-header__navigation-item--icon" @click="openCart">
             <i class="icon-user"></i>
-          </span>
+          </div>
+          <div class="site-header__navigation-item site-header__navigation-item--icon" @click="openCart">
+            <i class="icon-shopping-cart"></i>
+          </div> -->
         </div>
-      </site-header-user>
-      <div class="site-header__icon site-header__icon--cart" data-count="4">
-        <span class="icon">
-          <i class="icon-shopping-cart" @click="open"></i>
-        </span>
-      </div> -->
+        <!-- <div class="site-header__navigation-item site-header__navigation-item--logo">
+          [logo]
+        </div>
+        <div class="site-header__navigation-item" @mouseenter="isHoverVisible = true" @mouseleave="isHoverVisible = false">
+          Our Products
+        </div>
+        <div class="site-header__navigation-item">
+          About CBD
+        </div>
+        <div class="site-header__navigation-item site-header__navigation-item--icon" @click="openCart">
+          <i class="icon-user"></i>
+        </div>
+        <div class="site-header__navigation-item site-header__navigation-item--icon" @click="openCart">
+          <i class="icon-shopping-cart"></i>
+        </div> -->
+      </div>
+    </div>
+    <div class="site-header__hover-content" v-if="isHoverVisible" @mouseenter="isHoverVisible = true" @mouseleave="isHoverVisible = false">
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -64,11 +75,15 @@ import ui from '../services/ui'
   }
 })
 export default class SiteHeader extends Vue {
-  // public filled: boolean = false
+  public isHoverVisible: boolean = false
 
-  // public open () {
-  //   cart.open()
-  // }
+  public openCart () {
+    ui.setCartSidebarVisible(true)
+  }
+
+  get cartCount () {
+    return cart.count
+  }
 
   // public update () {
   //   this.filled = window.scrollY > 50
@@ -82,11 +97,6 @@ export default class SiteHeader extends Vue {
   //   window.removeEventListener('scroll', this.update)
   // }
 
-  get classes () {
-    return {
-      'is-transparent': ui.isHeaderTransparent
-    }
-  }
 
 }
 </script>

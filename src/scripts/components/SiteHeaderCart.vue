@@ -10,17 +10,18 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
+import ui from '../services/ui'
 import cart from '../services/cart'
 
 @Component
 export default class SiteHeaderCart extends Vue {
   
   public open () {
-    cart.open()
+    ui.setCartSidebarVisible(true)
   }
 
   get count () {
-    return 4
+    return cart.count
   }
 
 }

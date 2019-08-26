@@ -17,8 +17,9 @@
 
 <body>
   <div id="content">
+    {% include 'site-header' %}
     {{ content_for_layout }}
-    <site-header></site-header>
+    
     <cart-sidebar></cart-sidebar>
   </div>
 </body>

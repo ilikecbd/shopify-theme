@@ -1,6 +1,8 @@
 <div class="product-template template with-header">
   {% section "product-detail" %}
   
+  {% comment %} <img src="{{ product.featured_image | img_url: 'grande' }}" alt="{{ product.featured_image.alt }}"> {% endcomment %}
+
 
   <div v-product-recommendations></div>
 

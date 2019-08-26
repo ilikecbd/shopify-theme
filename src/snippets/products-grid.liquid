@@ -1,9 +1,13 @@
 {% paginate collection.products by 20 %}
 
 <div class="products-grid">
-  <div class="products-grid columns is-3 is-variable is-mobile is-multiline">
+  {% comment %} <div class="products-grid__header">
+    {% include "breadcrumbs" %}
+    <sort-options initial-value="{{ collection.sort_by | default: collection.default_sort_by | escape }}"></sort-options>
+  </div> {% endcomment %}
+  <div class="columns is-3 is-variable is-mobile is-multiline">
     {% for product in collection.products %}
-      <div class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop">
+      <div class="column is-half-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd">
         {% include 'product-preview' %}
       </div>
     {% endfor %}

@@ -1,0 +1,26 @@
+<div class="collection-template">
+  <div class="collection-template__masthead" v-transparent-nav-area></div>
+
+  {% comment %} <div class="section">
+    <div class="container">
+       <div class="products-grid__header">
+    {% include "breadcrumbs" %}
+    <sort-options initial-value="{{ collection.sort_by | default: collection.default_sort_by | escape }}"></sort-options>
+  </div>
+    </div>
+  </div> {% endcomment %}
+
+
+  <div class="section">
+    <div class="container is-fluid">
+      {% include "products-grid" %}
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      
+    </div>
+  </div>
+
+</div>

@@ -15,6 +15,21 @@ export class ShopifyService {
       headers: {
         'Content-Type': 'multipart/form-data'
       },
+      transformRequest: [
+        (data) => {
+          if (!data) {
+            return data
+          }
+    
+          const formData = new FormData()
+    
+          for (let key in data) {
+            formData.append(key, data[key])
+          }
+    
+          return formData
+        }
+      ]
     })
   }
 

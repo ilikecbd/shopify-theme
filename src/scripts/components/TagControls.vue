@@ -1,10 +1,22 @@
 <template>
   <div class="tag-controls">
-    <div v-for="(tags, category) in allTagsByCategory" :key="category">
+    <!-- <h4 class="is-size-5">Filters</h4> -->
+    <div class="tag-controls__category" v-for="(tags, category) in allTagsByCategory" :key="category">
+      <div class="tag-controls__category-title has-text-weight-bold">
+        <span>{{ category }}s</span>
+        <i class="icon-chevron-down1"></i>
+      </div>
+      <div class="tag-controls__category-options">
+         <a class="tag-controls__button" :class="generateTagClass(category, tag.tag)" :href="generateTagHref(category, tag.tag)" v-for="tag in tags" :key="tag.tag">{{ tag.text }}</a>
+      </div>
+
+    </div>
+
+    <!-- <div v-for="(tags, category) in allTagsByCategory" :key="category">
       <h5>{{ category }}s</h5>
       <a class="tag-controls__button" :class="generateTagClass(category, null)" :href="generateTagHref(category, null)">All</a>
       <a class="tag-controls__button" :class="generateTagClass(category, tag.tag)" :href="generateTagHref(category, tag.tag)" v-for="tag in tags" :key="tag.tag">{{ tag.text }}</a>
-    </div>
+    </div> -->
 
     <!-- <div v-for="(category, $categoryIndex) in categories" :key="$categoryIndex">
       <h5>{{ category }}s</h5>

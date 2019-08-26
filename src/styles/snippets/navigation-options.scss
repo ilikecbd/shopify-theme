@@ -1,0 +1,22 @@
+.navigation-options {
+  padding: 20px 1.5rem 0 1.5rem;
+  font-size: 0.9em;
+
+  &__label {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+
+  &__link {
+    display: block;
+  }
+
+  &__view-all {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding: 15px 0;
+    font-weight: 600;
+  }
+}

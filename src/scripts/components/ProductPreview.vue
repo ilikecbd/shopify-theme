@@ -7,7 +7,7 @@
     </a>
     <div class="product-preview__text is-size-7">
       <div class="product-preview__text-item">{{ product.title }}</div>
-      <div class="product-preview__text-item has-text-weight-bold">{{ product.price }}</div>
+      <div class="product-preview__text-item has-text-weight-bold">{{ product.price | currency }}</div>
     </div>
   </div>
 </template>

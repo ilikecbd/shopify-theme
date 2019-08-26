@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import shopify from '../shopify'
 import { Cart } from '../shopify/types'
+import { LocalStorageItem } from '../../utils';
 
 export interface CartServiceState {
   cart: Cart | null
@@ -10,16 +11,13 @@ export interface CartServiceState {
 }
 
 export class CartService {
+  private storedCount = new LocalStorageItem<number>('cart_count')
   private readonly state = Vue.observable<CartServiceState>({
     cart: null,
     cartUpdateRequest: null,
     cartUpdateError: null,
     visible: false
   })
-
-  constructor () {
-    this.fetch()
-  }
 
   public fetch = async () => {
     try {
@@ -32,7 +30,7 @@ export class CartService {
     }
   }
 
-  public add = async (variantId: string, quantity: number = 1) => {
+  public add = async (variantId: string | number, quantity: number = 1) => {
     try {
       const request = shopify.cart.add(variantId, quantity).then(() => shopify.cart.fetch())
 
@@ -73,6 +71,7 @@ export class CartService {
   private onUpdateSuccess = (cart: Cart) => {
     this.state.cartUpdateRequest = null
     this.state.cart = cart
+    this.storedCount.write(cart.item_count)
   }
 
   private onUpdateError = (error: Error) => {
@@ -93,19 +92,15 @@ export class CartService {
   }
 
   get count () {
-    return !!this.state.cart ? this.state.cart.lineItemCount : 0
+    return !!this.state.cart ? this.state.cart.item_count : this.storedCount.read() || 0
   }
 
   get items () {
-    return !!this.state.cart ? this.state.cart.lineItems : []
+    return !!this.state.cart ? this.state.cart.items : []
   }
 
-  get subtotal () {
-    return !!this.state.cart ? this.state.cart.subtotalPrice : 0
-  }
-
-  get checkoutUrl () {
-    return !!this.state.cart ? this.state.cart.checkoutUrl : undefined
+  get total () {
+    return !!this.state.cart ? this.state.cart.total_price : 0
   }
 
   get updating () {

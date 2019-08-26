@@ -1,0 +1,39 @@
+<div class="navigation-options">
+  <div class="container">
+    <div class="columns">
+
+      <div class="column is-one-quarter">
+        <h5 class="navigation-options__label">{{ linklists.categories-menu.title }}</h5>
+
+        {% for link in linklists.categories-menu.links %}
+          <a class="navigation-options__link" href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      </div>
+
+      <div class="column is-one-quarter">
+        <h5 class="navigation-options__label">{{ linklists.brands-menu.title }}</h5>
+
+        {% for link in linklists.brands-menu.links %}
+          <a class="navigation-options__link" href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      </div>
+      
+      <div class="column is-one-quarter">
+        <h5 class="navigation-options__label">{{ linklists.collections-menu.title }}</h5>
+
+        {% for link in linklists.collections-menu.links %}
+          <a class="navigation-options__link" href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      </div>
+
+      <div class="column is-one-quarter">
+        <h5 class="navigation-options__label">Don't see something you're looking for?</h5>
+        
+      </div>
+      
+    </div>
+    <div class="navigation-options__view-all">
+      View all <i class="icon-chevron-right2"></i>
+    </div>
+  </div>
+</div>
