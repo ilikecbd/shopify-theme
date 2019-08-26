@@ -1,10 +1,10 @@
 <div class="collection-square">
   <figure class="image is-square lazy" data-bg="url({{ collection.image | img_url: '500x500' }})">
     <div class="collection-square__content has-ratio">
-      <div>
+      <div class="collection-square__text">
         <h5 class="is-size-5 has-text-weight-bold">{{ collection.title }}</h5>
-        <p>{{ collection.description }}</p>
-        <a href="{{ collection.url }}">Explore more</a>
+        <p class="is-size-7 collection-square__details">{{ collection.description }}</p>
+        <a class="is-size-7 has-text-primary" href="{{ collection.url }}">Explore more</a>
       </div>
     </div>
   </figure>

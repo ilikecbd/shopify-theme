@@ -3,10 +3,10 @@
     <div class="site-header__content">
       <div class="container">
         <div class="site-header__navigation">
-          <div class="site-header__navigation-item site-header__navigation-item--logo">
+          <a href="/" class="site-header__navigation-item site-header__navigation-item--logo">
             [logo]
-          </div>
-          <a class="site-header__navigation-item site-header__navigation-item--link" @mouseenter="isHoverVisible = true" @mouseleave="isHoverVisible = false">
+          </a>
+          <a href="/collections/all" class="site-header__navigation-item site-header__navigation-item--link" @mouseenter="isHoverVisible = true" @mouseleave="isHoverVisible = false">
             Our Products
           </a>
           <a class="site-header__navigation-item site-header__navigation-item--link">
@@ -15,10 +15,10 @@
           <div class="site-header__navigation-item site-header__navigation-item--filler">
             <search-bar/>
           </div>
-          <a href="/login" class="site-header__navigation-item site-header__navigation-item--link">
+          <a href="/account/login" class="site-header__navigation-item site-header__navigation-item--link">
             Login
           </a>
-          <a href="/signup" class="site-header__navigation-item site-header__navigation-item--link">
+          <a href="/account/register" class="site-header__navigation-item site-header__navigation-item--link">
             Sign up
           </a>
           <div class="site-header__navigation-item site-header__navigation-item--icon" @click="openCart">

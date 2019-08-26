@@ -13,6 +13,7 @@
 @import "~bulma/sass/elements/button.sass";
 @import "~bulma/sass/elements/image.sass";
 @import "~bulma/sass/elements/icon.sass";
+@import "~bulma/sass/elements/title.sass";
 
 @import "./bulma/forms";
 
@@ -34,4 +35,8 @@ figure.image {
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+}
+
+.button {
+  border-radius: 20px;
 }
