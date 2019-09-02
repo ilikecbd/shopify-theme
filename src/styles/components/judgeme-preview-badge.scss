@@ -4,6 +4,8 @@
 
   &::after {
     padding-left: 3px;
+    font-size: 0.9em;
+    margin-top: -4px;
     content: "("attr(data-number-of-reviews)")";
   }
 

@@ -1,9 +1,7 @@
 <template>
   <div class="products-row">
-    <div class="products-row__header">
-      <div class="products-row__details">
-        <h5 class="is-size-5 has-text-weight-bold has-text-info">Recently Viewed</h5>
-      </div>
+    <div class="block">
+      <h5 class="is-size-4 has-text-weight-bold has-text-info">Recently Viewed</h5>
     </div>
     <div class="products-row__products columns is-mobile is-multiline">
       <div class="column is-half-mobile is-one-quarter-tablet is-one-fifth-desktop" v-for="product in products" :key="product.id">

@@ -7,6 +7,7 @@ import {
 export interface Product extends ShopifyProduct {
   variants: ProductVariant[]
   url: string
+  handle: string
 }
 
 export interface ProductVariant extends ShopifyProductVariant {

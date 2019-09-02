@@ -1,19 +1,36 @@
 <section class="section has-background-primary">
-  <div class="container has-text-centered">
-    <h5 class="is-size-5 has-text-weight-bold has-text-white">Always be in the know</h5>
-    <p class="is-size-6 has-text-black">Join our newsletter to be the first to know about giveaways, special offers, and new products.<br/>Sign up today and receive <span>15% OFF</span> your first order!</h5>
-  
-    {% comment %} <form>
-      <div class="field has-addons">
-        <div class="control">
-          <input class="input" type="text" placeholder="Find a repository">
+  <div class="container">
+
+    <div class="block has-text-centered">
+      <h5 class="title is-size-4 has-text-weight-bold has-text-white">
+        Always be in the know
+      </h5>
+      <p class="subtitle is-size-6 has-text-black">
+        Join our newsletter to be the first to know about giveaways, special offers, and new products.
+        <br/>
+        Sign up today and receive <span class="has-text-weight-bold has-text-white">15% OFF</span> your first order!
+      </p>
+    </div>
+    
+    {% form 'customer' %}
+       {% if form.posted_successfully? %}
+        <div class="has-text-centered">Thanks! We'll keep you updated.</div>
+      {% else %}
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <div class="field has-addons">
+              <div class="control is-expanded">
+                <input class="input is-fullwidth" placeholder="Email address" name="contact[email]" autocorrect="off" autocapitalize="off" required>
+              </div>
+              <div class="control">
+                <button class="button is-info">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="control">
-          <a class="button is-info">
-            Search
-          </a>
-        </div>
-      </div>
-    </form> {% endcomment %}
+      {% endif %}
+    {% endform %}
   </div>
 </section>

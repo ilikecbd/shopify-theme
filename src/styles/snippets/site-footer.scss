@@ -1,3 +1,16 @@
 .site-footer {
+
+  &__title {
+    font-weight: 600;
+    padding-bottom: 6px;
+  }
   
+  &__link {
+    display: block;
+    padding: 3px 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

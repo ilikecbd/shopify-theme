@@ -1,11 +1,31 @@
 .product-preview {
 
   &__thumbnail-container {
-    background: #eee;
+    position: relative;
+    width: 100%;
+    background: #fafafa;
+    border-radius: 4px;
+
+    &::before {
+      padding-top: 125%;
+      display: block;
+      content: "";
+    }
+
+    img {
+      opacity: 0;
+    }
+
+  }
+
+  &__thumbnail {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 
   &__text {
-    padding-top: 10px;
+    line-height: 1.6;
   }
 
   &__text-item {

@@ -1,17 +1,34 @@
 $family-sans-serif: 'Roboto';
+
+$body-size: 14px;
+
 $info: #5763c4;
 $primary: #ef8263;
+$link: hsl(0, 0%, 29%);
 
-// $input-background-color: #eee;
-$input-border-color: #eee;
-$input-hover-border-color: #eee;
+$section-padding: 4rem 1.5rem;
+
+$size-1: 4.5rem;
+$size-4: 1.4rem;
+$size-5: 1.1rem;
+$size-7: 0.9rem;
+
+$subtitle-line-height: 1.5;
+
+$input-border-color: #fff;
+$input-hover-color: #fafafa;
+$input-hover-border-color: transparent;
 $input-radius: 3px;
 $input-shadow: none;
-$size-7: 0.85rem;
-// $link: #ef845f;
-$link: hsl(0, 0%, 29%);
+$input-focus-border-color: #fff;
+
 $section-padding: 2rem 1.5rem;
-$button-padding-horizontal: 1.5em;
+
+$button-padding-vertical: calc(0.62em - 1px);
+$button-padding-horizontal: 1.75em;
+
+$control-padding-vertical: calc(1.35em - 1px);
+$control-padding-horizontal: 1em;
 
 $ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
 $ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);

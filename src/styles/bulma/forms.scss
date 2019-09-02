@@ -18,9 +18,30 @@
   // padding: 20px 12px;
   transition: all 0.2s;
   box-shadow: none !important;
+  // border: 0;
+  // font-size: 0.9em;
 }
 
 .button {
   transition: all 0.2s;
-  // border-radius: 40px;
+  height: auto;
+  
+  .icon {
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    .icon {
+      transform: translate3d(2px, 0, 0);
+    }
+  }
+}
+
+.button.is-rounded {
+  padding-left: $button-padding-horizontal;
+  padding-right: $button-padding-horizontal;
+}
+
+.is-underlined {
+  text-decoration: underline;
 }

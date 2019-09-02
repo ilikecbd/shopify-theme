@@ -1,12 +1,18 @@
 <div class="product-detail section">
   <div class="container">
     <div class="columns is-variable is-6">
-      <div class="column is-three-fifths">
-        <product-images />
+      <div class="column is-6">
+        <product-images>
+          {% for image in product.images %}
+            <div class="swiper-slide">
+              <img data-src="{{ image | img_url: 'master' }}" class="swiper-lazy">
+            </div>
+          {% endfor %}
+        </product-images>
       </div>
       <div class="column">
-        <h2 class="is-size-4 has-text-weight-bold has-text-info">{{ product.title }}</h2>
-        <div class="is-size-6">{{ product.description }}<div>
+        <h2 class="is-size-3 title has-text-weight-bold has-text-info block">{{ product.title }}</h2>
+        <div class="is-size-6 block">{{ product.description }}</div>
         <product-controls :product="{{ product | json | escape }}"></product-controls>
       </div>
     </div>

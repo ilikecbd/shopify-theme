@@ -9,7 +9,7 @@
         </select>
       </div>
     </div>
-    <button class="button" @click="add">Add to cart</button>
+    <add-to-cart :variant="currentVariantId" :quantity="1"></add-to-cart>
   </div>
 </template>
 
@@ -19,10 +19,15 @@ import { Component, Prop } from 'vue-property-decorator'
 import { Product } from '../services/shopify/types'
 import controls from '../services/product-controls'
 import cart from '../services/cart'
+import AddToCart from '../components/AddToCart.vue'
 
 //TODO: read initial ?variant=xxxx
 
-@Component
+@Component({
+  components: {
+    AddToCart,
+  }
+})
 export default class ProductControls extends Vue {
   @Prop(Object) product!: Product
 
@@ -38,15 +43,19 @@ export default class ProductControls extends Vue {
     return this.optionChoices.some((choice) => choice.length > 1)
   }
 
+  get currentVariantId () {
+    return controls.currentVariant ? controls.currentVariant.id : ''
+  }
+
   protected mounted () {
     controls.initialize(this.product)
   }
 
-  public add () {
-    if (controls.currentVariant) {
-      cart.add(controls.currentVariant.id)
-    }
-  }
+  // public add () {
+  //   if (controls.currentVariant) {
+  //     cart.add(controls.currentVariant.id)
+  //   }
+  // }
 
 }
 </script>

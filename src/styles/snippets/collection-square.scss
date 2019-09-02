@@ -1,15 +1,36 @@
+$collection-square-transition: all 0.3s;
+$collection-square-transition-height: 3px;
+
 .collection-square {
+  overflow: hidden;
+  position: relative;
+  
   &__content {
     display: flex;
     align-items: center;
     padding: 25px;
+    transition: $collection-square-transition;
   }
 
-  &__text {
-    width: 75%;
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: $collection-square-transition;
+    height: $collection-square-transition-height;
+    background: #fff;
+    width: 0;
+    content: "";
   }
 
-  // &__details {
-  //   font-size: 0.9em;
-  // }
+  &:hover {
+    .collection-square__content {
+      transform: translate3d(0, -$collection-square-transition-height, 0);
+    }
+
+    &::after {
+      width: 100%;
+    }
+  }
+
 }

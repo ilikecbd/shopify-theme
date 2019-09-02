@@ -1,18 +1,32 @@
 <footer class="site-footer">
   <div class="section has-background-white-bis">
     <div class="container">
-      <div class="columns">
-        <div class="column is-one-quarter">
-          1
+      <div class="columns is-mobile is-multiline">
+        <div class="column is-6-mobile is-2-tablet">
+          <div class="site-footer__title">About</div>
+          <a class="site-footer__link">About CBD</a>
+          <a class="site-footer__link">About us</a>
         </div>
-        <div class="column is-one-quarter">
-          2
+        <div class="column is-6-mobile is-2-tablet">
+          <div class="site-footer__title">Brands</div>
+          {% for link in linklists.brands-menu.links %}
+            <a class="site-footer__link" href="{{ link.url }}">{{ link.title }}</a>
+          {% endfor %}
         </div>
-        <div class="column is-one-quarter">
-          3
+        <div class="column is-6-mobile is-2-tablet">
+          <div class="site-footer__title">Collections</div>
+          {% for link in linklists.collections-menu.links %}
+            <a class="site-footer__link" href="{{ link.url }}">{{ link.title }}</a>
+          {% endfor %}
         </div>
-        <div class="column is-one-quarter">
-          4
+        <div class="column is-6-mobile is-2-tablet">
+          <div class="site-footer__title">Account</div>
+          <a class="site-footer__link" href="/account/register">Sign up</a>
+          <a class="site-footer__link" href="/account/login">Log in</a>
+          <a class="site-footer__link" href="/account">My Account</a>
+        </div>
+        <div class="column is-12-mobile is-4-tablet has-text-right-tablet">
+          [logo]
         </div>
       </div>
     </div>

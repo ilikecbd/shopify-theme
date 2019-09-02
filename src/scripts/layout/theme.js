@@ -10,6 +10,7 @@ import TransparentNavArea from '../directives/transparent-nav-area'
 import ProductRecommendations from '../directives/product-recommendations'
 import Vue from 'vue'
 import LazyLoad from 'vanilla-lazyload'
+import Sticky from 'sticky-js'
 
 const ll = new LazyLoad({
   elements_selector: '.lazy',
@@ -18,6 +19,8 @@ const ll = new LazyLoad({
 window.addEventListener('DOMContentLoaded', (event) => {
   ll.update()
 })
+
+new Sticky('.sticky')
 
 Vue.filter('currency', function (value) {
   return '$' + (value / 100).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');

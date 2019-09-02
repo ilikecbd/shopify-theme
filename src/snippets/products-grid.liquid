@@ -14,6 +14,8 @@
   </div>
 </div>
 
-{{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
+<div class="pagination">
+  {{ paginate | default_pagination }}
+</div>
 
 {% endpaginate %}

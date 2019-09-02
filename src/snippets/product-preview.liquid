@@ -1,8 +1,8 @@
 <div class="product-preview">
-  <a href="{{ product.url }}">
-    <figure class="product-preview__thumbnail-container image is-5by4" {% comment %} style="background-image: url({{ product.image | img_url: '400x400' }});" {% endcomment %}>
-      
-    </figure>
+  <a class="block is-block" href="{{ product.url }}">
+    <div class="product-preview__thumbnail-container">
+      <img class="product-preview__thumbnail" src="{{ product.featured_image | img_url: '400x400' }}" />
+    </div>
   </a>
   <div class="product-preview__text is-size-7">
     <div class="product-preview__text-item">{{ product.title }}</div>

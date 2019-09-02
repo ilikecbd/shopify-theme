@@ -1,5 +1,5 @@
 <template>
-  <select class="sort-options" v-model="value">
+  <select class="select sort-options" v-model="value">
     <option value="manual">Featured</option>
     <option value="price-ascending">Price: Low to High</option>
     <option value="price-descending">Price: High to Low</option>

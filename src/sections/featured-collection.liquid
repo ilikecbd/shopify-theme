@@ -1,16 +1,18 @@
 {%- assign collection = collections[section.settings.collection] -%}
 
-<section class="featured-collection section" style="background-image: url({{ 'masterhead.jpg' | asset_url }});">
+<section class="featured-collection section is-medium" style="background-image: url({{ 'masterhead.jpg' | asset_url }});">
   <div class="container">
-    <div class="featured-collection__content">
-      <h1 class="featured-collection__title title has-text-white has-text-weight-bold">Cool. Calm. Collected.</h1>
-      <p class="subtitle is-size-6 has-text-white">Some text goes here. Isn't that super interesting? I think so too.</p>
-      <a class="button is-primary" href="{{ collection.url }}">
-        <span>Explore the collection</span>
-        <span class="icon is-small">
-          <i class="icon-chevron-right1"></i>
-        </span>
-      </a>
+    <div class="columns">
+      <div class="column is-two-fifths">
+        <h1 class="title is-size-1 has-text-white has-text-weight-bold">Cool. Calm. Collected.</h1>
+        <p class="subtitle is-size-5 has-text-white">Some text goes here. Isn't that super interesting? I think so too.</p>
+        <a class="button is-rounded is-primary" href="{{ collection.url }}">
+          <span>Explore the collection</span>
+          <span class="icon is-small">
+            <i class="icon-chevron-right1"></i>
+          </span>
+        </a>
+      </div>
     </div>
   </div>
 </section>

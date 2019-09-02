@@ -1,22 +1,25 @@
 <div class="collection-template">
-  <div class="hero">
+  <div class="masthead">
 
-
-      </div>
+  </div>
 
 
   <div class="section">
     <div class="container">
       <div class="columns is-7 is-variable">
         <div class="column is-one-third-tablet is-one-quarter-desktop">
-          <tag-controls
-            :current-tags="{{ current_tags | json | escape }}"
-            :all-tags="{{ collections['all'].all_tags | json | escape }}"
-            :current-path="'{{ collection.url }}'"
-          ></tag-controls>
+          <div class="sticky">
+            <tag-controls
+              :current-tags="{{ current_tags | json | escape }}"
+              :all-tags="{{ collections['all'].all_tags | json | escape }}"
+              :current-path="'{{ collection.url }}'"
+            /></tag-controls>
+          </div>
         </div>
         <div class="column">
-        {% comment %} <sort-options initial-value="{{ collection.sort_by | default: collection.default_sort_by | escape }}"></sort-options> {% endcomment %}
+          <div class="block has-text-right">
+            <sort-options initial-value="{{ collection.sort_by | default: collection.default_sort_by | escape }}"></sort-options>
+          </div>
           {% include "products-grid" %}
         </div>
       </div>
