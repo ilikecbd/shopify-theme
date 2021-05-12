@@ -232,6 +232,11 @@
   resolved "https://registry.yarnpkg.com/@types/shopify-buy/-/shopify-buy-1.4.3.tgz#7863490c6157f38f5b69dde2cdf6b65da1cbcacd"
   integrity sha512-bzft/wdZY73mac+c7MuRtaHy820AtOfyb4zOsZW0P4RZ+Nm6p1E3hBlEti9bUbUWQ2if/EfqSj0UXgjojZ+IVA==
 
+"@types/swiper@^4.4.4":
+  version "4.4.11"
+  resolved "https://registry.yarnpkg.com/@types/swiper/-/swiper-4.4.11.tgz#f8f0860be9971c6b3666650b41aba3631b97f62f"
+  integrity sha512-o+tYRUyVK0g2k2NGOPdn671RHoKiVjzvt+aaPkKbf6lyDfKWmAKQ7ThCs1u+5GLBWAnJsHdE/aitykpms1P7jQ==
+
 "@vue/component-compiler-utils@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@vue/component-compiler-utils/-/component-compiler-utils-3.0.0.tgz#d16fa26b836c06df5baaeb45f3d80afc47e35634"
@@ -2767,6 +2772,13 @@ dom-serializer@0:
   dependencies:
     domelementtype "~1.1.1"
     entities "~1.1.1"
+
+dom7@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/dom7/-/dom7-3.0.0.tgz#b861ce5d67a6becd7aaa3ad02942ff14b1240331"
+  integrity sha512-oNlcUdHsC4zb7Msx7JN3K0Nro1dzJ48knvBOnDPKJ2GV9wl1i5vydJZUSyOfrkKFDZEud/jBsTk92S/VGSAe/g==
+  dependencies:
+    ssr-window "^3.0.0-alpha.1"
 
 domain-browser@^1.1.1:
   version "1.2.0"
@@ -6805,7 +6817,7 @@ once@^1.3.0, once@^1.3.1, once@^1.4.0:
 
 onetime@^1.0.0:
   version "1.1.0"
-  resolved "http://registry.npmjs.org/onetime/-/onetime-1.1.0.tgz#a1f7838f8314c516f05ecefcbc4ccfe04b4ed789"
+  resolved "https://registry.npmjs.org/onetime/-/onetime-1.1.0.tgz#a1f7838f8314c516f05ecefcbc4ccfe04b4ed789"
 
 onetime@^2.0.0:
   version "2.0.1"
@@ -8925,6 +8937,11 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     tweetnacl "~0.14.0"
 
+ssr-window@^3.0.0, ssr-window@^3.0.0-alpha.1:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-3.0.0.tgz#fd5b82801638943e0cc704c4691801435af7ac37"
+  integrity sha512-q+8UfWDg9Itrg0yWK7oe5p/XRCJpJF9OBtXfOPgSJl+u3Xd5KI328RUEvUqSMVM9CiQUEf1QdBzJMkYGErj9QA==
+
 ssri@^5.2.4:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/ssri/-/ssri-5.3.0.tgz#ba3872c9c6d33a0704a7d71ff045e5ec48999d06"
@@ -8976,6 +8993,11 @@ stdout-stream@^1.4.0:
 stealthy-require@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
+
+sticky-js@^1.2.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/sticky-js/-/sticky-js-1.3.0.tgz#9289bb3cad017378f2e816d6c6d7cb2121928cb2"
+  integrity sha512-X5zWjFrw7c2xE4tUtSeK7I+1o252JOyZOlzxsu1Q9qZ6hlk2NCd9Sr/AFxf8hfGkLnE1Pak+iLaDyd883LFRgw==
 
 stream-browserify@^2.0.1:
   version "2.0.1"
@@ -9272,6 +9294,14 @@ svgo@^1.0.0:
     stable "~0.1.6"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+swiper@^6.5.1:
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-6.5.1.tgz#795630e45bbebb3b3b2945d55c22ffdcf5536c1b"
+  integrity sha512-iuyg4cr+L7wo5EI0fWUuW+lT3BnNtVTYtInhUC5JImTr0i8jNranx8BPyN8AOSKa6jBYN+oaCzj8DAwGK+ngRg==
+  dependencies:
+    dom7 "^3.0.0"
+    ssr-window "^3.0.0"
 
 symbol-observable@1.0.1:
   version "1.0.1"
