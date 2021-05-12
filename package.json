@@ -37,7 +37,7 @@
     "bulma": "^0.7.5",
     "feather-icons": "^4.24.0",
     "sticky-js": "^1.2.0",
-    "swiper": "^4.5.0",
+    "swiper": "^6.5.1",
     "vanilla-lazyload": "^12.0.0",
     "vue": "^2.6.10"
   }
